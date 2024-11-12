@@ -1,0 +1,25 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use App\Models\JobLog;
+use Illuminate\Http\Request;
+
+class JobLogController extends Controller
+{
+
+    public function index()
+    {
+        $jobLogs = JobLog::paginate(10);
+        return view('job-dashboard', compact('jobLogs'));
+    }
+
+
+
+    public function show($id)
+    {
+        $jobLog = JobLog::findOrFail($id);
+
+        return view('job-detail', compact('jobLog'));
+    }
+}

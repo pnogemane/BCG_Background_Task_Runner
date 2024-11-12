@@ -1,0 +1,11 @@
+<?php
+
+namespace App\Jobs;
+
+class ExampleJob
+{
+    public function run($param)
+    {
+        \Log::info("ExampleJob running with parameter: $param");
+    }
+}
